@@ -1,0 +1,8 @@
+# vim: set ts=2 sw=2 ai si et:
+---
+
+- name: start gitlab-docker service
+  service:
+    name: gitlab-docker.service
+    state: started
+    enabled: true

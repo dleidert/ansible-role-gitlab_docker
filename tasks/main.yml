@@ -1,0 +1,14 @@
+# vim: set ts=2 sw=2 ai si et:
+---
+
+- name: populate service facts
+  service_facts:
+
+- name: stop gitlab-docker service
+  service:
+    name: gitlab-docker.service
+    state: stopped
+  when:
+    - "'gitlab-docker.service' in services"
+  notify:
+    - start gitlab-docker service
