@@ -1,0 +1,23 @@
+[Unit]
+Description=Gitlab Docker Service
+Wants=network-online.target
+Requires=docker.service
+After=network.target docker.service
+ConditionPathExists={{ gitlab_working_dir }}/docker-compose.yml
+
+[Service]
+User=root
+Group=docker
+WorkingDirectory={{ gitlab_working_dir }}
+Environment=GITLAB_HOME={{ gitlab_home_dir }}
+Environment=GITLAB_DATA={{ gitlab_data_dir }}
+Environment=GITLAB_RUNNER_HOME={{ gitlab_runner_home_dir }}
+ExecStartPre=docker-compose pull --include-deps
+ExecStart=docker-compose up
+ExecReload=docker-compose restart -t 30
+ExecStop=docker-compose down --remove-orphans
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+Alias=gitlab.service

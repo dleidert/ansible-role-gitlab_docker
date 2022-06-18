@@ -1,0 +1,9 @@
+# vim: set ts=2 sw=2 ai si et:
+---
+
+gitlab_working_dir: /etc/docker/gitlab
+
+gitlab_home_dir: /srv/gitlab/gitlab
+gitlab_data_dir: /srv/gitlab/data
+
+gitlab_runner_home_dir: /srv/gitlab/runner
