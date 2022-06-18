@@ -1,0 +1,29 @@
+# vim: set ts=2 sw=2 ai si et:
+---
+
+dependencies: []
+
+galaxy_info:
+  role_name: gitlab_docker
+  author: dleidert
+  description: Setup a gitlab instance with docker.
+  license: license(MIT)
+  min_ansible_version: 2.4
+  platforms:
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+  galaxy_tags:
+    - ansible
+    - automation
+    - ci
+    - development
+    - git
+    - gitlab
+    - integration
+    - packaging
+    - repository
+    - web
